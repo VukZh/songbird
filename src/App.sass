@@ -11,7 +11,7 @@ body
     border: 0
     font-family: "Fira Sans Condensed", sans-serif
     user-select: none
-    font-size: 2vw
+    font-size: 1.6vw
     outline: none    
 
 .wrapper
@@ -44,15 +44,12 @@ body
     justify-content: space-between
     border-radius: 0.3rem
     background-color: red
-.header__section__1,
-.header__section__2,
-.header__section__3,
-.header__section__4,
-.header__section__5,
-.header__section__6
+.header__section__item
     // background-color: blue
     flex-grow: 1
     text-align: center
+.currentSection
+    background-color: orange
 
 .question
     display: grid
@@ -88,17 +85,12 @@ body
     border: 1px solid black
     width: 50%
     margin: 0.5rem 0
-.choice__1,
-.choice__2,
-.choice__3,
-.choice__4,
-.choice__5,
-.choice__6
+.choice__item
     padding-left: 2rem 
     background-image: url("./assets/images/question.png")  
     background-repeat: no-repeat
     background-size: 0.9rem
-    background-position: 0.5rem center;
+    background-position: 0.5rem center
 .answer
     display: grid
     grid-template-areas: "icon text" "icon player" "specification specification"
@@ -162,7 +154,7 @@ body
 
 @media screen and (max-width: 800px)  
     *
-        font-size: 3vw
+        font-size: 2.4vw
     .wrapper__choice-answer
         margin-top: 4vw
         display: flex
@@ -181,7 +173,7 @@ body
 
 @media screen and (max-width: 480px) 
     *
-        font-size: 4vw    
+        font-size: 3.2vw    
     .wrapper__choice-answer
         // margin-top: 9vw
         display: flex
