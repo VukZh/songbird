@@ -82,8 +82,8 @@ body {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "icon text" "icon player";
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
   background-color: darkred;
@@ -157,7 +157,7 @@ body {
       grid-template-columns: 1fr 2fr;
   -ms-grid-rows: 1fr 1fr 2fr;
       grid-template-rows: 1fr 1fr 2fr;
-  background-color: orange;
+  background-color: blue;
   border-radius: 0.3rem;
   width: 50%;
   margin: 0.5rem 0;
@@ -227,6 +227,174 @@ body {
   border-radius: 0.3rem;
 }
 
+.picture {
+  border-radius: 0.3rem;
+  max-width: 80%;
+  height: auto;
+}
+
+.picture_question, .picture_11, .picture_12, .picture_13, .picture_14, .picture_15, .picture_16, .picture_21, .picture_22, .picture_23, .picture_24, .picture_25, .picture_26, .picture_31, .picture_32, .picture_33, .picture_34, .picture_35, .picture_36, .picture_41, .picture_42, .picture_43, .picture_44, .picture_45, .picture_46, .picture_51, .picture_52, .picture_53, .picture_54, .picture_55, .picture_56, .picture_61, .picture_62, .picture_63, .picture_64, .picture_65, .picture_66 {
+  border-radius: 0.3rem;
+  width: 95%;
+  height: 95%;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.picture_question {
+  background-image: url("./assets/images/animals/question.jpg");
+}
+
+.picture_11 {
+  background-image: url("./assets/images/animals/11.jpg");
+}
+
+.picture_12 {
+  background-image: url("./assets/images/animals/12.jpg");
+}
+
+.picture_13 {
+  background-image: url("./assets/images/animals/13.jpg");
+}
+
+.picture_14 {
+  background-image: url("./assets/images/animals/14.jpg");
+}
+
+.picture_15 {
+  background-image: url("./assets/images/animals/15.jpg");
+}
+
+.picture_16 {
+  background-image: url("./assets/images/animals/16.jpg");
+}
+
+.picture_21 {
+  background-image: url("./assets/images/animals/21.jpg");
+}
+
+.picture_22 {
+  background-image: url("./assets/images/animals/22.jpg");
+}
+
+.picture_23 {
+  background-image: url("./assets/images/animals/23.jpg");
+}
+
+.picture_24 {
+  background-image: url("./assets/images/animals/24.jpg");
+}
+
+.picture_25 {
+  background-image: url("./assets/images/animals/25.jpg");
+}
+
+.picture_26 {
+  background-image: url("./assets/images/animals/26.jpg");
+}
+
+.picture_31 {
+  background-image: url("./assets/images/animals/31.jpg");
+}
+
+.picture_32 {
+  background-image: url("./assets/images/animals/32.jpg");
+}
+
+.picture_33 {
+  background-image: url("./assets/images/animals/33.jpg");
+}
+
+.picture_34 {
+  background-image: url("./assets/images/animals/34.jpg");
+}
+
+.picture_35 {
+  background-image: url("./assets/images/animals/35.jpg");
+}
+
+.picture_36 {
+  background-image: url("./assets/images/animals/36.jpg");
+}
+
+.picture_41 {
+  background-image: url("./assets/images/animals/41.jpg");
+}
+
+.picture_42 {
+  background-image: url("./assets/images/animals/42.jpg");
+}
+
+.picture_43 {
+  background-image: url("./assets/images/animals/43.jpg");
+}
+
+.picture_44 {
+  background-image: url("./assets/images/animals/44.jpg");
+}
+
+.picture_45 {
+  background-image: url("./assets/images/animals/45.jpg");
+}
+
+.picture_46 {
+  background-image: url("./assets/images/animals/46.jpg");
+}
+
+.picture_51 {
+  background-image: url("./assets/images/animals/51.jpg");
+}
+
+.picture_52 {
+  background-image: url("./assets/images/animals/52.jpg");
+}
+
+.picture_53 {
+  background-image: url("./assets/images/animals/53.jpg");
+}
+
+.picture_54 {
+  background-image: url("./assets/images/animals/54.jpg");
+}
+
+.picture_55 {
+  background-image: url("./assets/images/animals/55.jpg");
+}
+
+.picture_56 {
+  background-image: url("./assets/images/animals/56.jpg");
+}
+
+.picture_61 {
+  background-image: url("./assets/images/animals/61.jpg");
+}
+
+.picture_62 {
+  background-image: url("./assets/images/animals/62.jpg");
+}
+
+.picture_63 {
+  background-image: url("./assets/images/animals/63.jpg");
+}
+
+.picture_64 {
+  background-image: url("./assets/images/animals/64.jpg");
+}
+
+.picture_65 {
+  background-image: url("./assets/images/animals/65.jpg");
+}
+
+.picture_66 {
+  background-image: url("./assets/images/animals/66.jpg");
+}
+
+.toggle-play-button {
+  background-color: red !important;
+}
+
 @media screen and (max-width: 800px) {
   * {
     font-size: 2.4vw;
@@ -240,20 +408,24 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 47vw;
+    height: 80vw;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     gap: 0;
   }
   .question {
     height: 23vw;
+    -ms-grid-columns: 3fr 5fr;
+        grid-template-columns: 3fr 5fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
   }
   .choice {
     height: 60vw;
     width: 100%;
   }
   .answer {
-    height: 23vw;
+    height: 40vw;
     width: 100%;
   }
 }
@@ -270,7 +442,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 75vw;
+    height: 110vw;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
@@ -285,7 +457,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 40vw;
+    height: 75vw;
   }
   .answer__icon {
     height: 33%;
@@ -308,10 +480,11 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     border: 1px solid black;
-    height: 30vw;
+    height: 60vw;
   }
   .question__icon {
     height: 50%;
+    width: 50%;
   }
   .question__text {
     height: 25%;
