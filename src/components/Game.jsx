@@ -4,14 +4,14 @@ import Question from "./Question";
 import WrapperChoiceAnswer from "./WrapperChoiceAnswer";
 import Next from "./Next";
 
-const Game = () => {
-    let randomQuestion = Math.floor(Math.random() * 6);
+const Game = ({section, numberQuestion}) => {
+    // let randomQuestion = Math.floor(Math.random() * 6);
 
   return (
     <div className="wrapper">
-      <Header />
-      <Question numberQuestion ={randomQuestion}/>
-      <WrapperChoiceAnswer numberQuestion ={randomQuestion}/>
+      <Header section = {section}/>
+      <Question numberQuestion ={numberQuestion} section = {section}/>
+      <WrapperChoiceAnswer numberQuestion ={numberQuestion} section = {section}/>
       <Next />
 
     </div>

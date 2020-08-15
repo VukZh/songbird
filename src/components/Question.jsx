@@ -1,16 +1,19 @@
 import React from "react";
 import Picture from "./Picture";
 import Player from "./Player";
-const Question = ({numberQuestion}) => {
+import QuestionText from "./QuestionText";
+
+const Question = ({numberQuestion, section}) => {
 
   // let randomQuestion = Math.floor(Math.random() * 6);
   // console.log ('   random   ' + randomQuestion);
   return (
     <div className="question">
-      <Picture namePic = 'question'></Picture>
-      <div className="question__text" >question__text {numberQuestion}</div>
+      <Picture pictureNumber = {numberQuestion} section = {section}></Picture>
+      {/* <div className="question__text" >question__text {numberQuestion}</div> */}
+      <QuestionText  numberQuestion = {numberQuestion} section = {section}/>
       {/* <div className="question__player" >question__player {numberQuestion}</div> */}
-      <Player />
+      <Player soundNumber = {numberQuestion} section = {section}/>
     </div>
   );
 };

@@ -1,15 +1,15 @@
 import React from "react";
 import HeaderTop from "./HeaderTop";
 import HeaderSection from "./HeaderSection";
-const Header = () => {
+const Header = ({section}) => {
 
-  let section = 5;
-  let sectionTitles = ['Разминка','Домашние животные','Насекомые','Амфибии','Хищные животные','Морские млекопитающие'];
+  // let section = 3;
+ 
 
   return (
     <div className="header">
       <HeaderTop />
-      <HeaderSection currSection={section} arrSection = {sectionTitles}/>
+      <HeaderSection currSection={section} />
     </div>
   );
 };
