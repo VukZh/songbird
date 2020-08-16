@@ -85,7 +85,7 @@ const Main = () => {
 
 
   const finishFlag = false;
-  const section = 1;
+  const section = 2;
   const randomQuestion = Math.floor(Math.random() * 6);
 
 

@@ -48,8 +48,8 @@ body
     // background-color: blue
     flex-grow: 1
     text-align: center
-.currentSection
-    background-color: orange
+// .currentSection
+//     background-color: orange
 
 .question
     display: grid
@@ -95,11 +95,27 @@ body
 .choice__item
     height: 15%
     padding-left: 2rem 
+    line-height: 1.8rem
+
+.choice__item_question
     background-image: url("./assets/images/question.png")  
     background-repeat: no-repeat
     background-size: 0.9rem
     background-position: 0.5rem center
-    line-height: 1.8rem
+
+.choice__item_ok
+    background-image: url("./assets/images/pass.png")  
+    background-repeat: no-repeat
+    background-size: 0.9rem
+    background-position: 0.5rem center    
+
+.choice__item_no
+    background-image: url("./assets/images/fail.png")  
+    background-repeat: no-repeat
+    background-size: 0.9rem
+    background-position: 0.5rem center        
+    
+    
 .choice__item:hover
     background-color: orange    
 .answer
