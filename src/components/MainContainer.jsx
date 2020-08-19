@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Game from "./Game";
 import Result from "./Result";
 
@@ -84,16 +84,31 @@ const Main = () => {
 
 
 
-  const finishFlag = false;
-  const section = 2;
-  const randomQuestion = Math.floor(Math.random() * 6);
+  const [section, setSection] = useState(1);
+
+  const [finishFlag, setFinal] = useState(false);
+
+  const [guessFlag, setGuess] = useState(999);
+
+  const [selectedArr, setFlag] = useState({
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+  });
+
+  let randomQuestion;
+
+  if (guessFlag === 999) {randomQuestion = Math.floor(Math.random() * 6)} else {randomQuestion = guessFlag};
 
 
   
   if (!finishFlag) {
-    return <Game section = {section} numberQuestion ={randomQuestion}/>;
+    return <Game section = {section} numberQuestion ={randomQuestion} updateSection = {setSection} setFinal = {setFinal} setGuess = {setGuess} guessFlag = {guessFlag} selectedArr = {selectedArr} setFlag = {setFlag}/>;
   }
-  return <Result />;
+  return <Result updateSection = {setSection} setFinal = {setFinal} setGuess = {setGuess}/>;
 };
 
 export default Main;

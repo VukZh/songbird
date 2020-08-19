@@ -97,7 +97,7 @@ const Player = ({soundNumber, section}) => {
         // showFilledProgress = {false}
         customAdditionalControls={[]}
         layout={"horizontal-reverse"}
-        autoPlay
+        // autoPlay
       />
 
       {/* <AudioPlayer  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"/> */}
