@@ -90,25 +90,20 @@ const Main = () => {
 
   const [guessFlag, setGuess] = useState(999);
 
-  const [selectedArr, setFlag] = useState({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
+
+  const [result, updateResult] = useState(0);
+
 
   let randomQuestion;
 
   if (guessFlag === 999) {randomQuestion = Math.floor(Math.random() * 6)} else {randomQuestion = guessFlag};
 
-
+  // console.log('>>>>>>>>>>>>>>>>>> ' + randomQuestion);
   
   if (!finishFlag) {
-    return <Game section = {section} numberQuestion ={randomQuestion} updateSection = {setSection} setFinal = {setFinal} setGuess = {setGuess} guessFlag = {guessFlag} selectedArr = {selectedArr} setFlag = {setFlag}/>;
+    return <Game section = {section} numberQuestion ={randomQuestion} updateSection = {setSection} setFinal = {setFinal} setGuess = {setGuess} guessFlag = {guessFlag} result = {result} updateResult = {updateResult}/>;
   }
-  return <Result updateSection = {setSection} setFinal = {setFinal} setGuess = {setGuess}/>;
+  return <Result updateSection = {setSection} setFinal = {setFinal} setGuess = {setGuess} result = {result} updateResult = {updateResult}/>;
 };
 
 export default Main;

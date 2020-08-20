@@ -83,7 +83,7 @@ const audioFiles  = {
 const Player = ({soundNumber, section}) => {
   const indAudioFiles = +('' + section + (soundNumber + 1));
 
-  console.log('indAudioFiles ' + indAudioFiles);
+  // console.log('indAudioFiles ' + indAudioFiles);
 
   const fileName = audioFiles[indAudioFiles];
   return (

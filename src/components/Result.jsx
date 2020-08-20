@@ -1,11 +1,12 @@
 import React from "react";
 
 // updateSection = {setSection} setFinal = {setFinal}
-const Result = ({ updateSection, setFinal, setGuess }) => {
+const Result = ({ updateSection, setFinal, setGuess, result, updateResult }) => {
   const resetGame = () => {
     updateSection(1);
     setFinal(false);
     setGuess(999);
+    updateResult(0);
   }
   return (
     <div className="wrapper">
@@ -13,7 +14,7 @@ const Result = ({ updateSection, setFinal, setGuess }) => {
         <div className="result__text">
           <div className="result__text__cap">Поздравляем!</div>
           <div className="result__text__result">
-            Вы прошли викторину и набрали 19 из 30 возможных баллов
+            Вы прошли викторину и набрали {result} из 30 возможных баллов
           </div>
         </div>
         <div className="result__new" onClick = {resetGame}>Попробовать еще раз!</div>

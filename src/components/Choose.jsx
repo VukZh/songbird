@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState  } from "react";
 
 import animalsData from "../data/data";
 
@@ -8,19 +8,19 @@ import soundNO from "../assets/audio/no.mp3";
 // const playSoundOK = new Audio(soundOK);
 // const playSoundNO = new Audio(soundNO);
 
-const Choose = ({ numberQuestion, section, setGuess, guessFlag}) => {
+const Choose = ({ numberQuestion, section, setGuess, setCurrentSel, selectedArr, setFlag, setChoose, chosen, countClick, updateClick}) => {
   const arrQuestion = animalsData[section - 1];
 
-  
+  // selectedArr = {selectedArr} setFlag = {setFlag}
 
-  const [selectedArr, setFlag] = useState({
-    0: false,
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-    5: false,
-  });
+  // const [selectedArr, setFlag] = useState({
+  //   0: false,
+  //   1: false,
+  //   2: false,
+  //   3: false,
+  //   4: false,
+  //   5: false,
+  // });
 
   // if (guessFlag === numberQuestion) {
   //   alert('ss')
@@ -34,7 +34,7 @@ const Choose = ({ numberQuestion, section, setGuess, guessFlag}) => {
   //   // })
   // }
 
-  const [chosen, setChoose] = useState(false);
+  // const [chosen, setChoose] = useState(false);
   
   const updateSelectedArr = (ind) => {
     setFlag({
@@ -46,6 +46,7 @@ const Choose = ({ numberQuestion, section, setGuess, guessFlag}) => {
 
 
   const сhosenFlag = (ind) => {
+    setCurrentSel(ind);
     if (ind === numberQuestion) {
       setChoose(true);
       setGuess(numberQuestion);
@@ -69,16 +70,16 @@ const Choose = ({ numberQuestion, section, setGuess, guessFlag}) => {
   // const questions = arrQuestion.map((item, ind) =>{
   //     const className = (ind === (numberQuestion)) ? 'currentSection choice__item' : 'choice__item';
 
-  useEffect (() => {
-    setFlag({
-      0: false,
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-    })
-  }, [guessFlag]);
+  // useEffect (() => {
+  //   setFlag({
+  //     0: false,
+  //     1: false,
+  //     2: false,
+  //     3: false,
+  //     4: false,
+  //     5: false,
+  //   })
+  // }, [guessFlag]);
 
   const questions = arrQuestion.map((item, ind) => {
     const playSoundOK = new Audio(soundOK);
@@ -98,7 +99,9 @@ const Choose = ({ numberQuestion, section, setGuess, guessFlag}) => {
     // const onClick = () => { playSound.play() ; console.log(`Choice ${ind}`); updateSelectedArr(ind); console.log('0 ' + selectedArr[0]  + '  ' + '1 ' + selectedArr[1] + '  ' + '2 ' + selectedArr[2] + '  ' + '3 ' + selectedArr[3] + '  ' + '4 ' + selectedArr[4]+ '  ' + '5 ' + selectedArr[5]) }
     const onClick = () => {
       сhosenFlag(ind);
+    
       if (!chosen) {
+        updateClick(countClick + 1);
         playSound.play();
         updateSelectedArr(ind);
       }
