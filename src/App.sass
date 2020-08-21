@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,700,800,900&display=swap")
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap")
 
+$border-radius: 0.2rem
+$primary: orange
+$secondary: #272B30
+$primary-text: white
+
 body 
     background-color: black
 
@@ -17,51 +22,59 @@ body
 .wrapper
     margin: 0 auto
     max-width: 1600px
-    background-color: gray
+    padding: 0 2vw
+    // background-color: gray
 .header
-    background-color: orange
+    // background-color: $primary
+    color: $primary-text
 .header__top
     display: flex
     margin: 0.5rem 0 
-    background-color: green
+    // background-color: green
     justify-content: space-around
     
 
 .header__title    
     margin: 0.5rem
     width: 80%
-    background-color: white
+    color: $primary-text
     font-family: "Permanent Marker", cursive
+    // font-size: 3vw
 .header__title2
     font-family: "Permanent Marker", cursive
-    color: orange
+    color: $primary
 .header__score  
     margin: 0.5rem  
     width: 20%          
     text-align: right 
-    background-color: yellow
+    // background-color: $secondary
+    color: $primary-text
 .header__section
     display: flex
     flex-wrap: wrap
     margin: 0.5rem 0
     justify-content: space-between
-    border-radius: 0.3rem
-    background-color: red
+    border-radius: $border-radius
+    background-color: $secondary
 .header__section__item
     // background-color: blue
     flex-grow: 1
-    margin: 0 1vw
+    padding: 0 1vw
     text-align: center
+// .header__section__item:first-child
+//     border-top-left-radius: $border-radius
+//     border-bottom-left-radius: $border-radius
 .currentSection
-    background-color: orange
+    background-color: $primary
+    border-radius: $border-radius
 
 .question
     display: grid
     grid-template-areas: "icon text" "icon player"
     grid-template-columns: 1fr 5fr
     grid-template-rows: 1fr 1fr
-    background-color: darkred 
-    border-radius: 0.3rem
+    background-color: $secondary
+    border-radius: $border-radius
     border: 1px solid black
     height: 10vw
 .question__icon
@@ -72,11 +85,11 @@ body
     border-bottom : 1px solid gray
     width: 90%
     margin: 0.5vw 2vw
-    color: white
+    color: $primary-text
     font-size: 3vw
 .question__player
     grid-area: player
-    border: 1px solid black
+    // border: 1px solid black
     // width: 500px
 
 
@@ -91,11 +104,12 @@ body
     display: flex
     justify-content: space-around
     flex-direction: column
-    background-color: blue 
-    border-radius: 0.3rem
+    background-color: $secondary
+    border-radius: $border-radius
     border: 1px solid black
     width: 50%
     margin: 0.5rem 0
+    color: $primary-text
 .choice__item
     height: 15%
     padding-left: 2rem 
@@ -122,14 +136,14 @@ body
     
     
 .choice__item:hover
-    background-color: orange    
+    background-color: $primary    
 .answer
     display: grid
     grid-template-areas: "icon text" "icon player" "specification specification"
     grid-template-columns: 1fr 2fr
     grid-template-rows: 1fr 1fr 2fr
-    background-color: blue 
-    border-radius: 0.3rem
+    background-color: $secondary
+    border-radius: $border-radius
     width: 50%
     margin: 0.5rem 0
     border: 1px solid black
@@ -141,7 +155,7 @@ body
     // border-bottom : 1px solid gray
     width: 90%
     margin: 0.5vw 2vw
-    color: white    
+    color: $primary-text    
 .answer__text_1
     font-size: 2vw
     border-bottom : 1px solid gray
@@ -153,13 +167,13 @@ body
     display: flex
     flex-direction: column    
     text-align: center
-    background-color: blue 
-    border-radius: 0.3rem
+    background-color: $secondary
+    border-radius: $border-radius
     width: 50%
     margin: 0.5rem 0
     padding: 1vw
     border: 1px solid black
-    color: white
+    color: $primary-text
 
 
 .answer__player
@@ -167,23 +181,26 @@ body
     border: 1px solid black
 .answer__specification
     grid-area: specification 
-    border: 1px solid black
+    // border: 1px solid black
     font-size: 1vw
-    color: white
+    color: $primary-text
     padding: 1vw
 
 .next
-    background-color: gray
+    background-color: $secondary
     text-align: center
+    border-radius: $border-radius
     margin: 0.5rem 0
-    border-radius: 0.3rem
+    color: $primary-text
+    
 
 .next_ok
-    background-color: orange
+    background-color: $primary
     text-align: center
     margin: 0.5rem 0
     cursor: pointer
-    border-radius: 0.3rem
+    border-radius: $border-radius
+    color: $primary-text
 
 // .next_ok: hover
 
@@ -193,10 +210,10 @@ body
     position: relative
     margin: 0 auto
     max-width: 1600px
-    background-color: yellow  
+    background-color: #69C968
     text-align: center
     margin: 0.5rem 0
-    border-radius: 0.3rem
+    border-radius: $border-radius
     height: 30vw
 .result__text__cap
     font-size: 200%    
@@ -207,17 +224,17 @@ body
     width: 90% 
     margin: 0 auto
     border: 1px solid black
-    border-radius: 0.3rem
-    background-color: orange
+    border-radius: $border-radius
+    background-color: $primary
     cursor: pointer
 
 .picture
-    border-radius: 0.3rem
+    border-radius: $border-radius
     max-width: 80%
     height: auto
 
 .picture_question, .picture_11, .picture_12, .picture_13, .picture_14, .picture_15, .picture_16, .picture_21, .picture_22, .picture_23, .picture_24, .picture_25, .picture_26, .picture_31, .picture_32, .picture_33, .picture_34, .picture_35, .picture_36, .picture_41, .picture_42, .picture_43, .picture_44, .picture_45, .picture_46, .picture_51, .picture_52, .picture_53, .picture_54, .picture_55, .picture_56, .picture_61,  .picture_62, .picture_63, .picture_64, .picture_65, .picture_66
-    border-radius: 0.3rem
+    border-radius: $border-radius
     // background-image: url("./assets/images/animals/11.jpg")  
     width: 95%
     height: 95%
@@ -337,14 +354,14 @@ body
 // .question
 //     background-image: url("./assets/images/question.png")    
 
-@media screen and (max-width: 800px)  
+@media screen and (max-width: 900px)  
     *
         font-size: 2.4vw
     .wrapper__choice-answer
         margin-top: 4vw
         display: flex
         flex-direction: column
-        height: 65vw    
+        height: 70vw    
         justify-content: space-around
         gap: 0
     .question
@@ -389,7 +406,7 @@ body
         // margin-top: 9vw
         display: flex
         flex-direction: column
-        height: 110vw    
+        height: 112vw    
         justify-content: space-around 
         // gap: 0
 
@@ -408,7 +425,8 @@ body
     .answer__player
         height: 20%      
     .answer__specification
-        height: 33%   
+        height: 33% 
+        font-size: 2.3vw  
     .noAnswer
         height: 73vw        
 

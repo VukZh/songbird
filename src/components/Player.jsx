@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 // import {audioFiles} from "./MainContainer";
@@ -80,15 +80,38 @@ const audioFiles  = {
   66: s66
 }
 
-const Player = ({soundNumber, section}) => {
+const Player = ({soundNumber, section, autoPlay, guessFlag}) => {
   const indAudioFiles = +('' + section + (soundNumber + 1));
 
   // console.log('indAudioFiles ' + indAudioFiles);
 
+  // let play;
+
+  const playerRef = useRef();
+
+  const audioStop = () => {
+    playerRef.current.audio.current.pause(); 
+    console.log('pause');
+  };
+
+
+  if (guessFlag) audioStop();
+
+
+  // play = false;   
+  // if (guessFlag) {
+  //   play = false;    
+  // } else {
+  //   play = autoPlay; 
+  // }
+
+
+  
+
   const fileName = audioFiles[indAudioFiles];
   return (
     <div className="question__player">
-      <AudioPlayer
+      <AudioPlayer 
         src={fileName}
         customProgressBarSection={[
           RHAP_UI.PROGRESS_BAR
@@ -97,7 +120,10 @@ const Player = ({soundNumber, section}) => {
         // showFilledProgress = {false}
         customAdditionalControls={[]}
         layout={"horizontal-reverse"}
-        // autoPlay
+        autoPlay = {autoPlay}
+        autoPlayAfterSrcChange  = {false}
+        ref = {playerRef}
+        // autoPlay = {autoPlay}
       />
 
       {/* <AudioPlayer  src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"/> */}

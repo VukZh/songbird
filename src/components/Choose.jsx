@@ -1,4 +1,4 @@
-import React, { useState  } from "react";
+import React, { useState } from "react";
 
 import animalsData from "../data/data";
 
@@ -8,8 +8,28 @@ import soundNO from "../assets/audio/no.mp3";
 // const playSoundOK = new Audio(soundOK);
 // const playSoundNO = new Audio(soundNO);
 
-const Choose = ({ numberQuestion, section, setGuess, setCurrentSel, selectedArr, setFlag, setChoose, chosen, countClick, updateClick}) => {
+const counterSelectedArr = (obj) => {
+  let counter = 0;
+  for (let key in obj) {
+    if (obj[key]) counter++;
+  }
+  return counter;
+};
+
+const Choose = ({
+  numberQuestion,
+  section,
+  setGuess,
+  setCurrentSel,
+  selectedArr,
+  setFlag,
+  setChoose,
+  chosen,
+  updateResult,
+  result,
+}) => {
   const arrQuestion = animalsData[section - 1];
+
 
   // selectedArr = {selectedArr} setFlag = {setFlag}
 
@@ -35,7 +55,7 @@ const Choose = ({ numberQuestion, section, setGuess, setCurrentSel, selectedArr,
   // }
 
   // const [chosen, setChoose] = useState(false);
-  
+
   const updateSelectedArr = (ind) => {
     setFlag({
       ...selectedArr,
@@ -43,15 +63,21 @@ const Choose = ({ numberQuestion, section, setGuess, setCurrentSel, selectedArr,
     });
   };
 
-
-
   const сhosenFlag = (ind) => {
     setCurrentSel(ind);
     if (ind === numberQuestion) {
+
+      if (!chosen) {
+        updateResult(5 - counterSelectedArr(selectedArr) + result);
+        // calculateFlag = true;
+      }
       setChoose(true);
       setGuess(numberQuestion);
-      
-      // 
+
+      // updateClick(0);
+      // console.log(countClick + " countClick >>>>>>>>>> result " + result);
+
+      //
 
       // setFlag({
       //   0: false,
@@ -99,15 +125,13 @@ const Choose = ({ numberQuestion, section, setGuess, setCurrentSel, selectedArr,
     // const onClick = () => { playSound.play() ; console.log(`Choice ${ind}`); updateSelectedArr(ind); console.log('0 ' + selectedArr[0]  + '  ' + '1 ' + selectedArr[1] + '  ' + '2 ' + selectedArr[2] + '  ' + '3 ' + selectedArr[3] + '  ' + '4 ' + selectedArr[4]+ '  ' + '5 ' + selectedArr[5]) }
     const onClick = () => {
       сhosenFlag(ind);
-    
+
       if (!chosen) {
-        updateClick(countClick + 1);
+        // updateClick(countClick + 1);
         playSound.play();
         updateSelectedArr(ind);
       }
     };
-
-
 
     return (
       <div key={ind} className={className} onClick={() => onClick()}>

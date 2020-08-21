@@ -22,16 +22,13 @@ const Game = ({section, numberQuestion, updateSection, setFinal, setGuess, guess
 
     const [chosen, setChoose] = useState(false);
 
-    const [countClick, updateClick] = useState(0);
-
-
 
   return (
     <div className="wrapper">
       <Header section = {section} result = {result}/>
       <Question numberQuestion ={numberQuestion} section = {section} guess = {false} guessFlag = {guessFlag}/>
-      <WrapperChoiceAnswer numberQuestion ={numberQuestion} section = {section} setGuess = {setGuess} guessFlag = {guessFlag} currentSel = {currentSel} setCurrentSel = {setCurrentSel} selectedArr = {selectedArr} setFlag = {setFlag} setChoose = {setChoose} chosen = {chosen} countClick = {countClick} updateClick = {updateClick}/>
-      <Next section = {section} updateSection = {updateSection} setFinal = {setFinal} numberQuestion = {numberQuestion} guessFlag = {guessFlag} setGuess = {setGuess}  setCurrentSel = {setCurrentSel} setFlag = {setFlag} setChoose = {setChoose} countClick = {countClick} updateClick = {updateClick} updateResult = {updateResult} result = {result}/>
+      <WrapperChoiceAnswer numberQuestion ={numberQuestion} section = {section} setGuess = {setGuess} guessFlag = {guessFlag} currentSel = {currentSel} setCurrentSel = {setCurrentSel} selectedArr = {selectedArr} setFlag = {setFlag} setChoose = {setChoose} chosen = {chosen} updateResult = {updateResult} result = {result}/>
+      <Next section = {section} updateSection = {updateSection} setFinal = {setFinal} numberQuestion = {numberQuestion} guessFlag = {guessFlag} setGuess = {setGuess}  setCurrentSel = {setCurrentSel} setFlag = {setFlag} setChoose = {setChoose} />
 
     </div>
   );

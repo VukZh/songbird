@@ -16,7 +16,7 @@ const Answer = ({ currentSel, section }) => {
         <AnswerText numberQuestion={currentSel} section={section} />
 
         {/* <div className="answer__player">answer__player</div> */}
-        <Player soundNumber={currentSel} section={section} />
+        <Player soundNumber={currentSel} section={section} autoPlay = {false}/>
         <AnswerDescription numberQuestion={currentSel} section={section} />
         {/* <div className="answer__specification">answer__specification</div> */}
       </div>

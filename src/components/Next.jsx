@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 
 // section = {section} updateSection = {updateSection} setFinal = {setFinal}
 
-const Next = ({section, updateSection, setFinal, guessFlag, setGuess, setCurrentSel, setFlag, setChoose, countClick, updateClick, updateResult, result}) => {
+const Next = ({section, updateSection, setFinal, guessFlag, setGuess, setCurrentSel, setFlag, setChoose}) => {
     
 
     // countClick = {countClick} updateResult = {updateResult}
@@ -18,11 +18,11 @@ const Next = ({section, updateSection, setFinal, guessFlag, setGuess, setCurrent
         setCurrentSel(999);
         setChoose(false);
 
-        if (guessFlag !== 999) {
-            updateResult(6 - countClick + result);
-            updateClick(0);
-            console.log(countClick + ' countClick >>>>>>>>>> result ' + result);
-        }
+        // if (guessFlag !== 999) {
+            // updateResult(6 - countClick + result);
+            // updateClick(0);
+            // console.log(countClick + ' countClick >>>>>>>>>> result ' + result);
+        // }
         
         
 
