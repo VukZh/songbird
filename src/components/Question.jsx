@@ -14,7 +14,7 @@ const Question = ({numberQuestion, section,  guessFlag}) => {
       {/* <div className="question__text" >question__text {numberQuestion}</div> */}
       <QuestionText  numberQuestion = {numberQuestion} section = {section}/>
       {/* <div className="question__player" >question__player {numberQuestion}</div> */}
-      <Player soundNumber = {numberQuestion} section = {section} autoPlay = {true} guessFlag = {guessFlag}/>
+      <Player soundNumber = {numberQuestion} section = {section} autoPlay = {true} flagPause/>
     </div>
     )
   }

@@ -80,7 +80,7 @@ const audioFiles  = {
   66: s66
 }
 
-const Player = ({soundNumber, section, autoPlay, guessFlag}) => {
+const Player = ({soundNumber, section, autoPlay, guessFlag, flagPause}) => {
   const indAudioFiles = +('' + section + (soundNumber + 1));
 
   // console.log('indAudioFiles ' + indAudioFiles);
@@ -91,11 +91,12 @@ const Player = ({soundNumber, section, autoPlay, guessFlag}) => {
 
   const audioStop = () => {
     playerRef.current.audio.current.pause(); 
+    playerRef.current.audio.current.currentTime  = 0; 
     console.log('pause');
   };
 
 
-  if (guessFlag) audioStop();
+  if (flagPause) audioStop();
 
 
   // play = false;   
