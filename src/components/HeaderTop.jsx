@@ -5,7 +5,7 @@ const HeaderTop = ({ result }) => {
       <h1 className="header__title">
         Song<span className="header__title2">animal</span>
       </h1>
-  <h3 className="header__score">Score: {result}</h3>
+      <h3 className="header__score">Score: {result}</h3>
     </div>
   );
 };

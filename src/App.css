@@ -6,15 +6,15 @@ body {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
   font-family: "Fira Sans Condensed", sans-serif;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 1.6vw;
   outline: none;
 }
@@ -35,7 +35,7 @@ body {
   display: flex;
   margin: 0.5rem 0;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .header__title {
@@ -62,19 +62,19 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0.5rem 0;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-radius: 0.2rem;
-  background-color: #272B30;
+  background-color: #272b30;
 }
 
 .header__section__item {
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   padding: 0 1vw;
   text-align: center;
 }
@@ -87,12 +87,12 @@ body {
 .question {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "icon text" "icon player";
+  grid-template-areas: "icon text" "icon player";
   -ms-grid-columns: 1fr 5fr;
-      grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 5fr;
   -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-  background-color: #272B30;
+  grid-template-rows: 1fr 1fr;
+  background-color: #272b30;
   border-radius: 0.2rem;
   border: 1px solid black;
   height: 10vw;
@@ -129,7 +129,7 @@ body {
   display: flex;
   height: 22vw;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   gap: 1rem;
 }
 
@@ -138,12 +138,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #272B30;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #272b30;
   border-radius: 0.2rem;
   border: 1px solid black;
   width: 50%;
@@ -186,12 +186,12 @@ body {
 .answer {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "icon text" "icon player" "specification specification";
+  grid-template-areas: "icon text" "icon player" "specification specification";
   -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
   -ms-grid-rows: 1fr 1fr 2fr;
-      grid-template-rows: 1fr 1fr 2fr;
-  background-color: #272B30;
+  grid-template-rows: 1fr 1fr 2fr;
+  background-color: #272b30;
   border-radius: 0.2rem;
   width: 50%;
   margin: 0.5rem 0;
@@ -232,10 +232,10 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: center;
-  background-color: #272B30;
+  background-color: #272b30;
   border-radius: 0.2rem;
   width: 50%;
   margin: 0.5rem 0;
@@ -262,7 +262,7 @@ body {
 }
 
 .next {
-  background-color: #272B30;
+  background-color: #272b30;
   text-align: center;
   border-radius: 0.2rem;
   margin: 0.5rem 0;
@@ -282,7 +282,7 @@ body {
   position: relative;
   margin: 0 auto;
   max-width: 1600px;
-  background-color: #69C968;
+  background-color: #69c968;
   text-align: center;
   margin: 0.5rem 0;
   border-radius: 0.2rem;
@@ -311,7 +311,43 @@ body {
   height: auto;
 }
 
-.picture_question, .picture_11, .picture_12, .picture_13, .picture_14, .picture_15, .picture_16, .picture_21, .picture_22, .picture_23, .picture_24, .picture_25, .picture_26, .picture_31, .picture_32, .picture_33, .picture_34, .picture_35, .picture_36, .picture_41, .picture_42, .picture_43, .picture_44, .picture_45, .picture_46, .picture_51, .picture_52, .picture_53, .picture_54, .picture_55, .picture_56, .picture_61, .picture_62, .picture_63, .picture_64, .picture_65, .picture_66 {
+.picture_question,
+.picture_11,
+.picture_12,
+.picture_13,
+.picture_14,
+.picture_15,
+.picture_16,
+.picture_21,
+.picture_22,
+.picture_23,
+.picture_24,
+.picture_25,
+.picture_26,
+.picture_31,
+.picture_32,
+.picture_33,
+.picture_34,
+.picture_35,
+.picture_36,
+.picture_41,
+.picture_42,
+.picture_43,
+.picture_44,
+.picture_45,
+.picture_46,
+.picture_51,
+.picture_52,
+.picture_53,
+.picture_54,
+.picture_55,
+.picture_56,
+.picture_61,
+.picture_62,
+.picture_63,
+.picture_64,
+.picture_65,
+.picture_66 {
   border-radius: 0.2rem;
   width: 95%;
   height: 95%;
@@ -484,19 +520,19 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 70vw;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     gap: 0;
   }
   .question {
     height: 20vw;
     -ms-grid-columns: 3fr 5fr;
-        grid-template-columns: 3fr 5fr;
+    grid-template-columns: 3fr 5fr;
     -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
   .question__text {
     margin: 2vw 3vw;
@@ -540,11 +576,11 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 112vw;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
   }
   .choice {
     height: 40vw;
@@ -555,8 +591,8 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 73vw;
   }
   .answer__icon {
@@ -582,8 +618,8 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     border: 1px solid black;
     height: 60vw;
   }

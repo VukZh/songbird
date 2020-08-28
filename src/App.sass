@@ -23,23 +23,20 @@ body
     margin: 0 auto
     max-width: 1600px
     padding: 0 2vw
-    // background-color: gray
+
 .header
-    // background-color: $primary
     color: $primary-text
+    
 .header__top
     display: flex
-    margin: 0.5rem 0 
-    // background-color: green
-    justify-content: space-around
-    
+    margin: 0.5rem 0
+    justify-content: space-around    
 
 .header__title    
     margin: 0.5rem
     width: 80%
     color: $primary-text
     font-family: "Permanent Marker", cursive
-    // font-size: 3vw
 .header__title2
     font-family: "Permanent Marker", cursive
     color: $primary
@@ -47,7 +44,6 @@ body
     margin: 0.5rem  
     width: 20%          
     text-align: right 
-    // background-color: $secondary
     color: $primary-text
 .header__section
     display: flex
@@ -57,13 +53,9 @@ body
     border-radius: $border-radius
     background-color: $secondary
 .header__section__item
-    // background-color: blue
     flex-grow: 1
     padding: 0 1vw
     text-align: center
-// .header__section__item:first-child
-//     border-top-left-radius: $border-radius
-//     border-bottom-left-radius: $border-radius
 .currentSection
     background-color: $primary
     border-radius: $border-radius
@@ -89,11 +81,6 @@ body
     font-size: 3vw
 .question__player
     grid-area: player
-    // border: 1px solid black
-    // width: 500px
-
-
-
 .wrapper__choice-answer
     display: flex
     height: 22vw
@@ -152,7 +139,6 @@ body
     border: 1px solid black
 .answer__text
     grid-area: text  
-    // border-bottom : 1px solid gray
     width: 90%
     margin: 0.5vw 2vw
     color: $primary-text    
@@ -181,7 +167,6 @@ body
     border: 1px solid black
 .answer__specification
     grid-area: specification 
-    // border: 1px solid black
     font-size: 1vw
     color: $primary-text
     padding: 1vw
@@ -201,10 +186,6 @@ body
     cursor: pointer
     border-radius: $border-radius
     color: $primary-text
-
-// .next_ok: hover
-
-            
 
 .result   
     position: relative
@@ -235,7 +216,6 @@ body
 
 .picture_question, .picture_11, .picture_12, .picture_13, .picture_14, .picture_15, .picture_16, .picture_21, .picture_22, .picture_23, .picture_24, .picture_25, .picture_26, .picture_31, .picture_32, .picture_33, .picture_34, .picture_35, .picture_36, .picture_41, .picture_42, .picture_43, .picture_44, .picture_45, .picture_46, .picture_51, .picture_52, .picture_53, .picture_54, .picture_55, .picture_56, .picture_61,  .picture_62, .picture_63, .picture_64, .picture_65, .picture_66
     border-radius: $border-radius
-    // background-image: url("./assets/images/animals/11.jpg")  
     width: 95%
     height: 95%
     background-repeat: no-repeat
@@ -328,32 +308,6 @@ body
 .toggle-play-button
     background-color: red !important
 
-// figure 
-
-//     // width: 100%
-//     // height: 100%
-//     // margin: 1.25rem auto
-//     // padding: 1.051%
-//     background-color: #666
-
-// .controls button 
-//    border:none
-//    cursor:pointer
-//    background:transparent
-//    background-size:contain
-//    background-repeat:no-repeat
-
-
-    // 
-// .pass
-//     background-image: url("./assets/images/pass.png")
-
-// .fail
-//     background-image: url("./assets/images/fail.png")
-
-// .question
-//     background-image: url("./assets/images/question.png")    
-
 @media screen and (max-width: 900px)  
     *
         font-size: 2.4vw
@@ -385,11 +339,9 @@ body
     .answer__text_1
         font-size: 3vw
         padding: 0.5vw 0
-        // border-bottom : 1px solid gray
     .answer__text_2
         font-size: 1.5vw
         padding: 0.5vw 0
-        // border-bottom : 1px solid gray     
 
     .answer__specification
         font-size: 2vw
@@ -403,16 +355,13 @@ body
     *
         font-size: 3.2vw    
     .wrapper__choice-answer
-        // margin-top: 9vw
         display: flex
         flex-direction: column
         height: 112vw    
         justify-content: space-around 
-        // gap: 0
 
     .choice
         height: 40vw
-        // height: 100%
     .answer
         display: flex
         flex-direction: column

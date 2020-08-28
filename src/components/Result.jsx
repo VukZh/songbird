@@ -3,10 +3,6 @@ import Confetti from "react-confetti";
 import soundFinal from "../assets/audio/final.mp3";
 import soundWin from "../assets/audio/win.mp3";
 
-// updateSection = {setSection} setFinal = {setFinal}
-
-
-
 const Result = ({
   updateSection,
   setFinal,
@@ -20,8 +16,6 @@ const Result = ({
   } else {
     playSound = new Audio(soundFinal);
   }
-  
-
   playSound.play();
 
   const resetGame = () => {
@@ -60,11 +54,7 @@ const Result = ({
             Попробовать еще раз!
           </div>
         </div>
-        <Confetti
-          recycle = {false}  
-          numberOfPieces = {450}     
-          // friction = {0.5}   
-        />
+        <Confetti recycle={false} numberOfPieces={450} />
       </div>
     );
   }

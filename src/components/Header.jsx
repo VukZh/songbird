@@ -1,14 +1,10 @@
 import React from "react";
 import HeaderTop from "./HeaderTop";
 import HeaderSection from "./HeaderSection";
-const Header = ({section, result}) => {
-
-  // let section = 3;
- 
-
+const Header = ({ section, result }) => {
   return (
     <div className="header">
-      <HeaderTop result = {result}/>
+      <HeaderTop result={result} />
       <HeaderSection currSection={section} />
     </div>
   );
