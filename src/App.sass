@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,500,700,800,900&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap")
+
+$border-radius: 0.2rem
+$primary: orange
+$secondary: #272B30
+$primary-text: white
+
+body 
+    background-color: black
+
+*   
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    border: 0
+    font-family: "Fira Sans Condensed", sans-serif
+    user-select: none
+    font-size: 1.6vw
+    outline: none    
+
+.wrapper
+    margin: 0 auto
+    max-width: 1600px
+    padding: 0 2vw
+
+.header
+    color: $primary-text
+    
+.header__top
+    display: flex
+    margin: 0.5rem 0
+    justify-content: space-around    
+
+.header__title    
+    margin: 0.5rem
+    width: 80%
+    color: $primary-text
+    font-family: "Permanent Marker", cursive
+.header__title2
+    font-family: "Permanent Marker", cursive
+    color: $primary
+.header__score  
+    margin: 0.5rem  
+    width: 20%          
+    text-align: right 
+    color: $primary-text
+.header__section
+    display: flex
+    flex-wrap: wrap
+    margin: 0.5rem 0
+    justify-content: space-between
+    border-radius: $border-radius
+    background-color: $secondary
+.header__section__item
+    flex-grow: 1
+    padding: 0 1vw
+    text-align: center
+.currentSection
+    background-color: $primary
+    border-radius: $border-radius
+
+.question
+    display: grid
+    grid-template-areas: "icon text" "icon player"
+    grid-template-columns: 1fr 5fr
+    grid-template-rows: 1fr 1fr
+    background-color: $secondary
+    border-radius: $border-radius
+    border: 1px solid black
+    height: 10vw
+.question__icon
+    grid-area: icon
+    border: 1px solid black
+.question__text
+    grid-area: text
+    border-bottom : 1px solid gray
+    width: 90%
+    margin: 0.5vw 2vw
+    color: $primary-text
+    font-size: 3vw
+.question__player
+    grid-area: player
+.wrapper__choice-answer
+    display: flex
+    height: 22vw
+    justify-content: space-around
+    gap: 1rem
+
+.choice
+    display: flex
+    justify-content: space-around
+    flex-direction: column
+    background-color: $secondary
+    border-radius: $border-radius
+    border: 1px solid black
+    width: 50%
+    margin: 0.5rem 0
+    color: $primary-text
+.choice__item
+    height: 15%
+    padding-left: 2rem 
+    line-height: 1.8rem
+    cursor: pointer
+
+.choice__item_question
+    background-image: url("./assets/images/question.png")  
+    background-repeat: no-repeat
+    background-size: 0.9rem
+    background-position: 0.5rem center
+
+.choice__item_ok
+    background-image: url("./assets/images/pass.png")  
+    background-repeat: no-repeat
+    background-size: 0.9rem
+    background-position: 0.5rem center    
+
+.choice__item_no
+    background-image: url("./assets/images/fail.png")  
+    background-repeat: no-repeat
+    background-size: 0.9rem
+    background-position: 0.5rem center        
+    
+    
+.choice__item:hover
+    background-color: $primary    
+.answer
+    display: grid
+    grid-template-areas: "icon text" "icon player" "specification specification"
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: 1fr 1fr 2fr
+    background-color: $secondary
+    border-radius: $border-radius
+    width: 50%
+    margin: 0.5rem 0
+    border: 1px solid black
+.answer__icon    
+    grid-area: icon 
+    border: 1px solid black
+.answer__text
+    grid-area: text  
+    width: 90%
+    margin: 0.5vw 2vw
+    color: $primary-text    
+.answer__text_1
+    font-size: 2vw
+    border-bottom : 1px solid gray
+.answer__text_2
+    font-size: 1vw
+    padding: 0.3vw 0
+    border-bottom : 1px solid gray     
+.noAnswer       
+    display: flex
+    flex-direction: column    
+    text-align: center
+    background-color: $secondary
+    border-radius: $border-radius
+    width: 50%
+    margin: 0.5rem 0
+    padding: 1vw
+    border: 1px solid black
+    color: $primary-text
+
+
+.answer__player
+    grid-area: player   
+    border: 1px solid black
+.answer__specification
+    grid-area: specification 
+    font-size: 1vw
+    color: $primary-text
+    padding: 1vw
+
+.next
+    background-color: $secondary
+    text-align: center
+    border-radius: $border-radius
+    margin: 0.5rem 0
+    color: $primary-text
+    
+
+.next_ok
+    background-color: $primary
+    text-align: center
+    margin: 0.5rem 0
+    cursor: pointer
+    border-radius: $border-radius
+    color: $primary-text
+
+.result   
+    position: relative
+    margin: 0 auto
+    max-width: 1600px
+    background-color: #69C968
+    text-align: center
+    margin: 0.5rem 0
+    border-radius: $border-radius
+    height: 30vw
+.result__text__cap
+    font-size: 200%    
+.result__new
+    position: absolute
+    bottom: 1rem
+    left: 5%
+    width: 90% 
+    margin: 0 auto
+    border: 1px solid black
+    border-radius: $border-radius
+    background-color: $primary
+    cursor: pointer
+
+.picture
+    border-radius: $border-radius
+    max-width: 80%
+    height: auto
+
+.picture_question, .picture_11, .picture_12, .picture_13, .picture_14, .picture_15, .picture_16, .picture_21, .picture_22, .picture_23, .picture_24, .picture_25, .picture_26, .picture_31, .picture_32, .picture_33, .picture_34, .picture_35, .picture_36, .picture_41, .picture_42, .picture_43, .picture_44, .picture_45, .picture_46, .picture_51, .picture_52, .picture_53, .picture_54, .picture_55, .picture_56, .picture_61,  .picture_62, .picture_63, .picture_64, .picture_65, .picture_66
+    border-radius: $border-radius
+    width: 95%
+    height: 95%
+    background-repeat: no-repeat
+    margin: auto
+    background-size: cover
+    background-position: center
+  
+.picture_question
+    background-image: url("./assets/images/animals/question.jpg")  
+
+.picture_11
+    background-image: url("./assets/images/animals/11.jpg")  
+.picture_12
+    background-image: url("./assets/images/animals/12.jpg")  
+.picture_13
+    background-image: url("./assets/images/animals/13.jpg")  
+.picture_14
+    background-image: url("./assets/images/animals/14.jpg")  
+.picture_15
+    background-image: url("./assets/images/animals/15.jpg")  
+.picture_16
+    background-image: url("./assets/images/animals/16.jpg")        
+
+.picture_21
+    background-image: url("./assets/images/animals/21.jpg")  
+.picture_22
+    background-image: url("./assets/images/animals/22.jpg")  
+.picture_23
+    background-image: url("./assets/images/animals/23.jpg")  
+.picture_24
+    background-image: url("./assets/images/animals/24.jpg")  
+.picture_25
+    background-image: url("./assets/images/animals/25.jpg")  
+.picture_26
+    background-image: url("./assets/images/animals/26.jpg")                
+
+.picture_31
+    background-image: url("./assets/images/animals/31.jpg")  
+.picture_32
+    background-image: url("./assets/images/animals/32.jpg")  
+.picture_33
+    background-image: url("./assets/images/animals/33.jpg")  
+.picture_34
+    background-image: url("./assets/images/animals/34.jpg")  
+.picture_35
+    background-image: url("./assets/images/animals/35.jpg")  
+.picture_36
+    background-image: url("./assets/images/animals/36.jpg")      
+
+.picture_41
+    background-image: url("./assets/images/animals/41.jpg")  
+.picture_42
+    background-image: url("./assets/images/animals/42.jpg")  
+.picture_43
+    background-image: url("./assets/images/animals/43.jpg")  
+.picture_44
+    background-image: url("./assets/images/animals/44.jpg")  
+.picture_45
+    background-image: url("./assets/images/animals/45.jpg")  
+.picture_46
+    background-image: url("./assets/images/animals/46.jpg")  
+
+.picture_51
+    background-image: url("./assets/images/animals/51.jpg")  
+.picture_52
+    background-image: url("./assets/images/animals/52.jpg")  
+.picture_53
+    background-image: url("./assets/images/animals/53.jpg")  
+.picture_54
+    background-image: url("./assets/images/animals/54.jpg")  
+.picture_55
+    background-image: url("./assets/images/animals/55.jpg")  
+.picture_56
+    background-image: url("./assets/images/animals/56.jpg")  
+
+.picture_61
+    background-image: url("./assets/images/animals/61.jpg")  
+.picture_62
+    background-image: url("./assets/images/animals/62.jpg")  
+.picture_63
+    background-image: url("./assets/images/animals/63.jpg")  
+.picture_64
+    background-image: url("./assets/images/animals/64.jpg")  
+.picture_65
+    background-image: url("./assets/images/animals/65.jpg")  
+.picture_66
+    background-image: url("./assets/images/animals/66.jpg")  
+
+
+.toggle-play-button
+    background-color: red !important
+
+@media screen and (max-width: 900px)  
+    *
+        font-size: 2.4vw
+    .wrapper__choice-answer
+        margin-top: 4vw
+        display: flex
+        flex-direction: column
+        height: 70vw    
+        justify-content: space-around
+        gap: 0
+    .question
+        height: 20vw    
+        grid-template-columns: 3fr 5fr
+        grid-template-rows: 1fr 1fr
+
+    .question__text
+        margin: 2vw 3vw
+        font-size: 5vw
+
+    .choice 
+        height: 30vw
+        width: 100% 
+    .choice__item
+        line-height: 1.8rem
+    .answer 
+        height: 37.5vw
+        width: 100%  
+
+    .answer__text_1
+        font-size: 3vw
+        padding: 0.5vw 0
+    .answer__text_2
+        font-size: 1.5vw
+        padding: 0.5vw 0
+
+    .answer__specification
+        font-size: 2vw
+
+    .noAnswer 
+        height: 40vw
+        width: 100%          
+          
+
+@media screen and (max-width: 480px) 
+    *
+        font-size: 3.2vw    
+    .wrapper__choice-answer
+        display: flex
+        flex-direction: column
+        height: 112vw    
+        justify-content: space-around 
+
+    .choice
+        height: 40vw
+    .answer
+        display: flex
+        flex-direction: column
+        height: 68.5vw
+    .answer__icon
+        height: 33%
+    .answer__text
+        height: 13%     
+        text-align: center 
+    .answer__player
+        height: 20%      
+    .answer__specification
+        height: 33% 
+        font-size: 2.3vw  
+    .noAnswer
+        height: 73vw        
+
+    .question
+        display: flex
+        flex-direction: column
+        border: 1px solid black
+        height: 60vw
+
+    .question__icon
+        height: 50% 
+        width: 50%
+        margin-top: 0.5rem
+
+    .question__player
+        height: 30%
+
+    .question__text
+        height: 20%
+        font-size: 5vw
+        line-height: 3vw
+        text-align: center
+        padding-top: 3vw
+        width: 94%        
