@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Picture from "./Picture";
 import Player from "./Player";
 import AnswerText from "./AnswerText";
 import AnswerDescription from "./AnswerDescription";
+import { StepContext } from "../context/stepContext";
 
-const Answer = ({ currentSel, section }) => {
-  if (currentSel !== 999) {
+const Answer = () => {
+  const valueStepContext = useContext(StepContext);
+  if (valueStepContext.currentSel !== 999) {
     return (
       <div className="answer">
-        <Picture pictureNumber={currentSel} section={section}></Picture>
-        <AnswerText numberQuestion={currentSel} section={section} />
-        <Player soundNumber={currentSel} section={section} autoPlay={false} />
-        <AnswerDescription numberQuestion={currentSel} section={section} />
+        <Picture></Picture>
+        <AnswerText />
+        <Player soundNumber={valueStepContext.currentSel} autoPlay={false} />
+        <AnswerDescription />
       </div>
     );
   } else {

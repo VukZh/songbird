@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MainContext } from "../context/mainContext";
 import Picture from "./Picture";
 import Player from "./Player";
 import QuestionText from "./QuestionText";
 
-const Question = ({ numberQuestion, section, guessFlag }) => {
-  if (guessFlag !== 999) {
+const Question = ({ numberQuestion }) => {
+  const valueContext = useContext(MainContext);
+
+  if (valueContext.guessFlag !== 999) {
     return (
       <div className="question">
-        <Picture pictureNumber={numberQuestion} section={section}></Picture>
-        <QuestionText numberQuestion={numberQuestion} section={section} />
-        <Player
-          soundNumber={numberQuestion}
-          section={section}
-          autoPlay={true}
-          flagPause
-        />
+        <Picture pictureNumber={numberQuestion}></Picture>
+        <QuestionText numberQuestion={numberQuestion} />
+        <Player soundNumber={numberQuestion} autoPlay={true} flagPause />
       </div>
     );
   }
@@ -22,7 +20,7 @@ const Question = ({ numberQuestion, section, guessFlag }) => {
     <div className="question">
       <div className="picture_question question__icon"></div>
       <div className="question__text">******</div>
-      <Player soundNumber={numberQuestion} section={section} autoPlay={true} />
+      <Player soundNumber={numberQuestion} autoPlay={true} />
     </div>
   );
 };

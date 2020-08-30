@@ -1,39 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Game from "./Game";
 import Result from "./Result";
+
+import { MainContext } from "../context/mainContext";
+import { StepContextProvider } from "../context/stepContext";
+
 const Main = () => {
-  const [section, setSection] = useState(1);
-  const [finishFlag, setFinal] = useState(false);
-  const [guessFlag, setGuess] = useState(999);
-  const [result, updateResult] = useState(0);
+  const valueContext = useContext(MainContext);
+
   let randomQuestion;
-  if (guessFlag === 999) {
+  if (valueContext.guessFlag === 999) {
     randomQuestion = Math.floor(Math.random() * 6);
   } else {
-    randomQuestion = guessFlag;
+    randomQuestion = valueContext.guessFlag;
   }
-  if (!finishFlag) {
+  if (!valueContext.finishFlag) {
     return (
-      <Game
-        section={section}
-        numberQuestion={randomQuestion}
-        updateSection={setSection}
-        setFinal={setFinal}
-        setGuess={setGuess}
-        guessFlag={guessFlag}
-        result={result}
-        updateResult={updateResult}
-      />
+      <StepContextProvider>
+        <Game numberQuestion={randomQuestion} />
+      </StepContextProvider>
     );
   }
-  return (
-    <Result
-      updateSection={setSection}
-      setFinal={setFinal}
-      setGuess={setGuess}
-      result={result}
-      updateResult={updateResult}
-    />
-  );
+  return <Result />;
 };
 export default Main;

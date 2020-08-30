@@ -1,19 +1,16 @@
-import React from "react";
-const Next = ({
-  section,
-  updateSection,
-  setFinal,
-  guessFlag,
-  setGuess,
-  setCurrentSel,
-  setFlag,
-  setChoose,
-}) => {
+import React, { useContext } from "react";
+import { MainContext } from "../context/mainContext";
+import { StepContext } from "../context/stepContext";
+
+const Next = () => {
+  const valueContext = useContext(MainContext);
+  const valueStepContext = useContext(StepContext);
+
   const nextStep = () => {
-    setGuess(999);
-    setCurrentSel(999);
-    setChoose(false);
-    setFlag({
+    valueContext.setGuess(999);
+    valueStepContext.setCurrentSel(999);
+    valueStepContext.setChoose(false);
+    valueStepContext.setFlag({
       0: false,
       1: false,
       2: false,
@@ -21,14 +18,14 @@ const Next = ({
       4: false,
       5: false,
     });
-    if (section > 5) {
-      setFinal(true);
+    if (valueContext.section > 5) {
+      valueContext.setFinal(true);
     } else {
-      updateSection(section + 1);
+      valueContext.setSection(valueContext.section + 1);
     }
   };
 
-  if (guessFlag !== 999) {
+  if (valueContext.guessFlag !== 999) {
     return (
       <div className="next_ok" onClick={nextStep}>
         Дальше

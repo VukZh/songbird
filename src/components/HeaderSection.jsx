@@ -1,5 +1,9 @@
-import React from "react";
-const HeaderSection = ({ currSection }) => {
+import React, { useContext } from "react";
+import { MainContext } from "../context/mainContext";
+
+const HeaderSection = () => {
+  const valueContext = useContext(MainContext);
+
   const arrSection = [
     "Разминка",
     "Домашние животные",
@@ -10,17 +14,11 @@ const HeaderSection = ({ currSection }) => {
   ];
   const sections = arrSection.map((item, ind) => {
     const className =
-      ind === currSection - 1
+      ind === valueContext.section - 1
         ? "currentSection header__section__item"
         : "header__section__item";
     return (
-      <div
-        key={ind}
-        className={className}
-        onClick={() => {
-          console.log(`section ${ind}`);
-        }}
-      >
+      <div key={ind} className={className}>
         {item}
       </div>
     );

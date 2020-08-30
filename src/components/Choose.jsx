@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import animalsData from "../data/data";
 import soundOK from "../assets/audio/ok.mp3";
 import soundNO from "../assets/audio/no.mp3";
+import { MainContext } from "../context/mainContext";
+import { StepContext } from "../context/stepContext";
 
 const counterSelectedArr = (obj) => {
   let counter = 0;
@@ -11,42 +13,36 @@ const counterSelectedArr = (obj) => {
   return counter;
 };
 
-const Choose = ({
-  numberQuestion,
-  section,
-  setGuess,
-  setCurrentSel,
-  selectedArr,
-  setFlag,
-  setChoose,
-  chosen,
-  updateResult,
-  result,
-}) => {
-  const arrQuestion = animalsData[section - 1];
-
+const Choose = ({ numberQuestion }) => {
+  const valueContext = useContext(MainContext);
+  const valueStepContext = useContext(StepContext);
+  const arrQuestion = animalsData[valueContext.section - 1];
   const updateSelectedArr = (ind) => {
-    setFlag({
-      ...selectedArr,
+    valueStepContext.setFlag({
+      ...valueStepContext.selectedArr,
       [ind]: true,
     });
   };
 
   const сhosenFlag = (ind) => {
-    setCurrentSel(ind);
+    valueStepContext.setCurrentSel(ind);
     if (ind === numberQuestion) {
-      if (!chosen) {
-        updateResult(5 - counterSelectedArr(selectedArr) + result);
+      if (!valueStepContext.chosen) {
+        valueContext.updateResult(
+          5 -
+            counterSelectedArr(valueStepContext.selectedArr) +
+            valueContext.result
+        );
       }
-      setChoose(true);
-      setGuess(numberQuestion);
+      valueStepContext.setChoose(true);
+      valueContext.setGuess(numberQuestion);
     }
   };
   const questions = arrQuestion.map((item, ind) => {
     const playSoundOK = new Audio(soundOK);
     const playSoundNO = new Audio(soundNO);
 
-    const className = selectedArr[ind]
+    const className = valueStepContext.selectedArr[ind]
       ? ind === numberQuestion
         ? "choice__item choice__item_ok"
         : "choice__item choice__item_no"
@@ -55,7 +51,7 @@ const Choose = ({
     const onClick = () => {
       сhosenFlag(ind);
 
-      if (!chosen) {
+      if (!valueStepContext.chosen) {
         playSound.play();
         updateSelectedArr(ind);
       }

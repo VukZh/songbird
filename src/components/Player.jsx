@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { MainContext } from "../context/mainContext";
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player";
 import "../player.css";
 
@@ -78,8 +79,10 @@ const audioFiles = {
   66: s66,
 };
 
-const Player = ({ soundNumber, section, autoPlay, guessFlag, flagPause }) => {
-  const indAudioFiles = +("" + section + (soundNumber + 1));
+const Player = ({ soundNumber, autoPlay, flagPause }) => {
+  const valueContext = useContext(MainContext);  
+
+  const indAudioFiles = +("" + valueContext.section + (soundNumber + 1));
   const playerRef = useRef();
   const audioStop = () => {
     playerRef.current.audio.current.pause();
