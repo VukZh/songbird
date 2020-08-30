@@ -52,7 +52,7 @@ const Result = () => {
             Попробовать еще раз!
           </div>
         </div>
-        <Confetti recycle={false} numberOfPieces={450} />
+        <Confetti recycle={false} numberOfPieces={450} width={window.innerWidth}/>
       </div>
     );
   }
